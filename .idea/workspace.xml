@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="664624e5-cb37-401a-998f-bf21318baa43" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/(tabs)/subscriptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(tabs)/subscriptions.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="664624e5-cb37-401a-998f-bf21318baa43" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +117,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/Emperor/Desktop/syncwise",
@@ -132,7 +130,7 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.com.intellij.httpClient.http.request.highlighting.HttpRequestColorSettingsPage",
     "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Users/Emperor/Desktop/syncwise/node_modules/typescript/lib"
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -162,7 +160,7 @@
       <workItem from="1793273101734" duration="5534000" />
       <workItem from="1793278813957" duration="186000" />
       <workItem from="1793279111001" duration="10792000" />
-      <workItem from="1793358872391" duration="7820000" />
+      <workItem from="1793358872391" duration="8146000" />
     </task>
     <servers />
   </component>
