@@ -9,13 +9,13 @@ const Text = styled(RNText);
 export default function App() {
     return (
         <SafeAreaView className="flex-1 bg-background p-5">
-            <Text className="text-7xl font-sans will-change-variable" style={{ color: 'red' }}>
+            <Text className="text-7xl font-sans-extrabold">
                 Home
             </Text>
-            <Text className="text-xl font-light will-change-variable">
+            <Text className="text-xl font-light">
                 Demo
             </Text>
-            <Link href='/onboarding' className="text-7xl font-sans-extrabold mt-4 rounded bg-primary text-white will-change-variable">
+            <Link href='/onboarding' className="text-7xl font-sans-light mt-4 rounded bg-primary text-white will-change-variable">
                 Go to onboarding
             </Link><Link href='/(auth)/sign-in' className="mt-4 rounded bg-primary text-white">
                 Sign in

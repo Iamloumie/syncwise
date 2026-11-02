@@ -1,34 +1,43 @@
 import {Stack} from "expo-router";
+import * as Font from 'expo-font';
+import {useEffect, useState} from 'react';
 import "@/global.css"
-import {useFonts} from "expo-font";
-import {useEffect} from "react";
-import * as SplashScreen from "expo-splash-screen";
-
-// Prevent the splash screen from auto-hiding before fonts load
-SplashScreen.preventAutoHideAsync();
 
 export const unstable_settings = {
   anchor: "(tabs)",
 };
 
+// Google Fonts URLs for Plus Jakarta Sans
+const FONT_URLS = {
+  'PlusJakartaSans-Regular': 'https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU7NSg.ttf',
+  'PlusJakartaSans-Light': 'https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_907NSg.ttf',
+  'PlusJakartaSans-Medium': 'https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_m07NSg.ttf',
+  'PlusJakartaSans-SemiBold': 'https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_d0nNSg.ttf',
+  'PlusJakartaSans-Bold': 'https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_TknNSg.ttf',
+  'PlusJakartaSans-ExtraBold': 'https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_KUnNSg.ttf',
+};
+
 export default function RootLayout() {
-  // Load the fonts before any UI comes up
-  const [fontsLoaded, error] = useFonts({
-    'sans-regular': require('../../assets/fonts/PlusJakartaSans-Regular.ttf'),
-    'sans-light': require('../../assets/fonts/PlusJakartaSans-Light.ttf'),
-    'sans-medium': require('../../assets/fonts/PlusJakartaSans-Medium.ttf'),
-    'sans-semibold': require('../../assets/fonts/PlusJakartaSans-SemiBold.ttf'),
-    'sans-bold': require('../../assets/fonts/PlusJakartaSans-Bold.ttf'),
-    'sans-extrabold': require('../../assets/fonts/PlusJakartaSans-ExtraBold.ttf'),
-  })
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
-    if (fontsLoaded || error) {
-      SplashScreen.hideAsync();
+    async function load() {
+      try {
+        console.log('Loading fonts...');
+        await Font.loadAsync(FONT_URLS);
+        console.log('✅ Fonts loaded');
+        setFontsLoaded(true);
+      } catch (e) {
+        console.log('❌ Font error:', e);
+        setFontsLoaded(true);
+      }
     }
-  }, [fontsLoaded, error]);
+    load();
+  }, []);
 
-  if (!fontsLoaded && !error) return null;
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return <Stack screenOptions={{ headerShown: false }} />;
 }
